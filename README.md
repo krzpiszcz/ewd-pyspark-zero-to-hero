@@ -15,12 +15,26 @@ Checkout the YouTube Series : [PySpark - Zero to Hero]
 URL - https://youtube.com/playlist?list=PL2IsFZBGM_IHCl9zhRVC1EXTomkEp_1zm
 
 
+## ######## ######## ######## ######## ######## ######## ######## ######## ######## ######## ########
 #### Spark Container - KP
 https://github.com/subhamkharwal/docker-images
 jupyter-docker-lab
 docker compose up
 
+# stop session
+spark.stop() - stop session
+# print details
+print(spark.sparkContext.applicationId)
+print(spark.sparkContext.uiWebUrl)
+
+## ######## ######## ######## ######## ######## ######## ########
 ## KP version
+
+# VS Code - connect #
+-- spark server
+http://localhost:8888
+spark1234
+
 docker build -t ewd/pyspark-jupyter-lab-kp .
 docker run -it -p 8888:8888 -p 4040:4040 -v /home/krisubu/GitProjects/ewd-pyspark-zero-to-hero:/home/jupyter/pyspark-zero-to-hero --name jupyter-lab ewd/pyspark-jupyter-lab-kp
 
@@ -60,6 +74,9 @@ get link with token, get the token:
 --Jupyter Lab, use Token and create pwd
 localhost:8888
 
+-- Job server
+locahost:4040
+
 -- create SparkSession / Spark cluster
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate()
@@ -67,7 +84,6 @@ spark = SparkSession.builder.getOrCreate()
 spark
 -- check Spark Engine, Jobs
 
-locahost:4040
 
 #### Working with cluster
 data folder
